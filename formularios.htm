@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        color: green;
+        font-size: 2rem;
+        background-color: bisque;
+        border: none;
+        box-shadow: 2px 2px 2px black;
+        display: block;
+        margin: 10px;
+      }
+      input[type="reset"] {
+        background-color: brown;
+        color: azure;
+        border-radius: 5px;
+      }
+      fieldset {
+        width: 200px;
+        background-color: burlywood;
+      }
+      fieldset input {
+        display: inline;
+      }
+      select {
+        background-color: aquamarine;
+        color: blue;
+      }
+      input[required]+span::after {
+        content: "*";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>asas</p>
+    <p>asas</p>
+    <!-- atributos básicos 
+    - required: es obligatorio
+    - placeholder: texto de ayuda que desaparece cuando se escriba algo
+    - min: valor mínimo en input de tipo numéricos
+    - max: valor máximo en input de tipo numéricos
+    - minlength: longitud mínima de caracteres en input de tipo texto
+    - maxlength: longitud máxima de caracteres en input de tipo texto
+    - size: tamaño en caracteres de un cuadro de texto (no los máximos que admite)
+    - name: nombre que tiene un cuadro de texto, radio, checkbox,... y que se usará
+    para reconocer los datos enviados
+    - id: algo similar al name y que se usa en JavaScript o en el for de la etiqueta label
+    -->
+    <!-- métodos de envío:
+    - get: los datos van en la propia url y se ven
+    - post: los datos van en el cuerpo de la petición y no se ven directamente
+    -->
+    <!-- etiquetas:
+    - form: para el formulario enterio
+    - input type="text": para cuadros de texto
+    - input type="password": para contraseñas
+    - input type="number": para números
+    - input type="tel": para teléfonos
+    - input type="email": para emails
+    - input type="color": para colores
+    - input type="date": para fechas
+    - input type="radio": para seleccionar un elemento entre varios posibles
+    - input type="checkbox": para seleccionar uno o varios elementos entre varios posibles
+    - input type="file": para enviar ficheros
+    - input type="submit": para enviar los datos
+    - input type="reset": para emails
+    - select: para crear listas desplegables
+    - textarea: para cuadros de texto de varias líneas
+    - fieldset: para agrupar varios elementos dentro de una caja. Puede llevar una etiqueta
+    legend para que tenga un título
+    - label: los textos que acompañana a los text, email, select, .... conviene
+    meterlos en etiquetas label.
+    -->
+    <form action="" method="get"> 
+      <fieldset>
+        <label>nombre:
+            <input
+                type="text"
+                name="nombre"
+                size="10"
+                maxlength="5"
+                minlength="3"
+                placeholder="Aquí pon tu nombre"
+                required
+            /><span></span>
+        </label>
+        <label for="apellidos">Apellidos</label>
+        <hr>
+        <input type="text" name="apellidos" id="apellidos" required /><span></span>
+        contraseña:<input type="password" name="contraseña" />
+      </fieldset>
+
+      <select name="ciudad" id="">
+        <option value="0">Cangas</option>
+        <option value="1">Baiona</option>
+        <option>Vigo</option>
+        <option>Redondela</option>
+      </select>
+      Observaciones
+      <textarea
+        name="observaciones"
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="Danos tu opinión"
+      ></textarea>
+
+      email:<input type="email" name="email" /> teléfono:
+      <input type="tel" name="telefono" /> edad:
+      <input type="number" name="edad" min="1" /> Fecha Alta:
+      <input type="date" /> Color: <input type="color" name="color" /> mes:
+      <input type="month" name="mes" id="" /> Buscar<input
+        type="search"
+        name=""
+        id=""
+      />
+      Acepto: <input type="checkbox" name="acepto" id="" />
+      <fieldset>
+        <legend>Sexo</legend>
+        Hombre<input type="radio" name="sexo" id="" /> Mujer<input
+          type="radio"
+          name="sexo"
+          id=""
+        />
+        Otros<input type="radio" name="sexo" id="" />
+      </fieldset>
+      <fieldset>
+        Soltero<input type="radio" name="estadoCivil" id="" /> Casado<input
+          type="radio"
+          name="estadoCivil"
+          id=""
+        />
+      </fieldset>
+      <input type="file" name="fichero" id="" />
+      <input type="submit" value="enviar" />
+      <input type="reset" value="borrar" />
+    </form>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html>
